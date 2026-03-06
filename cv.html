@@ -534,14 +534,25 @@
         }
 
         /* ── Print Styles ── */
+        @page {
+            size: A4;
+            margin: 1.2cm 1.5cm;
+        }
+
         @media print {
             body {
                 background: #fff !important;
                 color: #222 !important;
-                font-size: 11pt;
+                font-size: 10.5pt;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
             }
 
+            /* Hide navigation, buttons, and any page URL-bearing elements */
             .top-bar, .print-fab { display: none !important; }
+
+            /* Suppress href URLs that some browsers print after links */
+            a[href]::after { content: none !important; }
 
             .cv-wrapper { margin: 0; padding: 0; max-width: 100%; }
 
@@ -553,48 +564,80 @@
             }
 
             .cv-header {
-                background: #f8f8f8 !important;
+                background: #f4f4f4 !important;
                 color: #000;
-                padding: 1.5rem 2rem;
+                padding: 1.2rem 1.8rem 1rem;
+                border-bottom: 2px solid #ccc;
             }
 
             .cv-name {
-                -webkit-text-fill-color: #222 !important;
-                color: #222 !important;
+                -webkit-text-fill-color: #111 !important;
+                color: #111 !important;
+                font-size: 2rem !important;
             }
 
-            .cv-title { color: #444 !important; }
+            .cv-title { color: #333 !important; }
 
-            .cv-contact-item, .cv-contact-item a { color: #444 !important; }
+            .cv-contact-item, .cv-contact-item a { color: #333 !important; }
+            .cv-contact-item i { color: #555 !important; }
 
-            .cv-body { padding: 0 2rem 2rem; }
+            .cv-body { padding: 0 1.8rem 1.5rem; }
 
-            .cv-section { margin-top: 1.5rem; }
+            .cv-section { margin-top: 1.2rem; }
 
             .cv-section-title {
-                color: #333 !important;
-                border-bottom-color: #ccc !important;
+                color: #222 !important;
+                border-bottom-color: #bbb !important;
+                font-size: 0.9rem !important;
+                padding-bottom: 0.35rem;
+                margin-bottom: 0.8rem;
             }
 
             .cv-entry {
                 background: transparent;
                 border-color: #ddd;
-                border-left-color: #999;
+                border-left-color: #888;
+                padding: 0.8rem 1rem;
+                margin-bottom: 0.9rem;
+                page-break-inside: avoid;
             }
 
-            .cv-entry-role { color: #111 !important; }
-            .cv-entry-org { color: #444 !important; }
-            .cv-entry li { color: #555 !important; }
+            .cv-entry-role { color: #111 !important; font-size: 0.95rem !important; }
+            .cv-entry-date {
+                background: none !important;
+                border: none !important;
+                color: #555 !important;
+                font-size: 0.78rem !important;
+            }
+            .cv-entry-org { color: #333 !important; }
+            .cv-entry li { color: #444 !important; font-size: 0.85rem !important; }
+            .cv-entry li::before { color: #555 !important; }
 
-            .cv-summary { color: #333 !important; opacity: 1 !important; }
+            .cv-summary { color: #333 !important; opacity: 1 !important; font-size: 0.9rem !important; }
 
-            .skill-group { background: transparent; border-color: #ddd; }
-            .skill-group-title { color: #333 !important; }
-            .skill-tag { color: #555 !important; border-color: #ccc; background: #f5f5f5; }
+            .skill-group { background: transparent; border-color: #ddd; padding: 0.6rem 0.8rem; }
+            .skill-group-title { color: #222 !important; font-size: 0.78rem !important; }
+            .skill-tag { color: #444 !important; border-color: #ccc; background: #f5f5f5; font-size: 0.72rem !important; }
 
             .language-item, .info-item { background: transparent; border-color: #ddd; }
+            .language-info strong { color: #111 !important; }
+            .language-info span { color: #555 !important; }
+
             .cv-testimonial { background: transparent; border-color: #ddd; border-left-color: #aaa; }
-            .cv-testimonial blockquote { color: #444 !important; }
+            .cv-testimonial blockquote { color: #444 !important; font-size: 0.82rem !important; }
+            .cv-testimonial-meta .reviewer { color: #666 !important; }
+
+            .achievement-item { color: #222 !important; }
+            .achievement-item i { color: #555 !important; }
+
+            .edu-badge {
+                background: #eee !important;
+                border-color: #ccc !important;
+                color: #444 !important;
+            }
+
+            .info-item strong { color: #333 !important; }
+            .info-item span { color: #111 !important; }
         }
 
         /* ── Responsive ── */
@@ -721,7 +764,8 @@
                             <li>Collaborated with hotels, room reservation services, and partners for necessary arrangements</li>
                             <li>Acted as bridge between guests and management to address concerns and relay feedback</li>
                             <li>Focused on delivering high-quality service to enhance guest satisfaction throughout tours</li>
-                            <li>Coordinated multiple simultaneous group tours (up to 30+ participants)</li>
+                            <li>Managed 10+ simultaneous group tours with groups of up to 30+ participants</li>
+                            <li>Served and guided inbound tourists from Europe, America, and Asia</li>
                             <li>Managed guest requests and customized itineraries based on preferences</li>
                         </ul>
                     </div>
@@ -877,7 +921,7 @@
                         </div>
                         <div class="achievement-item">
                             <i class="fas fa-check-circle"></i>
-                            <span><strong>Large Group Management</strong> — Coordinated group tours of 30+ participants with seamless logistics</span>
+                            <span><strong>Simultaneous Multi-Group Management</strong> — Managed 10+ tour groups simultaneously, each with seamless logistics and personalised service</span>
                         </div>
                         <div class="achievement-item">
                             <i class="fas fa-check-circle"></i>
@@ -885,7 +929,7 @@
                         </div>
                         <div class="achievement-item">
                             <i class="fas fa-check-circle"></i>
-                            <span><strong>Cross-National Operations</strong> — Managed operations across Nepal, Mauritius, and Germany</span>
+                            <span><strong>Inbound Tourism Excellence</strong> — Managed Nepal inbound tourism operations, welcoming and guiding tourists from Europe, America, and Asia</span>
                         </div>
                         <div class="achievement-item">
                             <i class="fas fa-check-circle"></i>
