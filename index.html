@@ -10,16 +10,19 @@
     <meta property="og:url" content="https://ayitsmejivan.github.io/Portfolio">
     <title>Jivan Parajuli | Tourism & Operations Professional</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <style>
-        /* CSS Variables */
+        /* CSS Variables - Tourism & Hospitality Theme */
         :root {
-            --dark-bg: #0A0E27;
-            --primary-color: #667eea;
-            --secondary-color: #764ba2;
-            --accent-color: #00D4FF;
-            --text-light: #e2e8f0;
-            --text-muted: #94a3b8;
+            --dark-bg: #071E2B;
+            --primary-color: #D4940A;
+            --secondary-color: #0B7A8A;
+            --accent-color: #FF8C42;
+            --text-light: #F0EDE8;
+            --text-muted: #A8B8C8;
             --card-bg: rgba(255, 255, 255, 0.05);
             --card-border: rgba(255, 255, 255, 0.1);
         }
@@ -35,10 +38,10 @@
         }
 
         body {
-            background: linear-gradient(135deg, #0A0E27 0%, #1a1f3a 50%, #2d1b4a 100%);
+            background: linear-gradient(135deg, #071E2B 0%, #0D3A4F 50%, #10474A 100%);
             background-attachment: fixed;
             color: var(--text-light);
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             min-height: 100vh;
         }
@@ -48,7 +51,7 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(10, 14, 39, 0.9);
+            background: rgba(7, 30, 43, 0.92);
             backdrop-filter: blur(10px);
             border-bottom: 1px solid var(--card-border);
             z-index: 1000;
@@ -147,7 +150,7 @@
             border: 3px solid var(--dark-bg);
             z-index: 1;
             display: block;
-            box-shadow: 0 20px 50px rgba(102, 126, 234, 0.4);
+            box-shadow: 0 20px 50px rgba(212, 148, 10, 0.4);
         }
 
         .hero-photo-badge {
@@ -157,7 +160,7 @@
             width: 34px;
             height: 34px;
             border-radius: 50%;
-            background: linear-gradient(135deg, #43e97b, #38f9d7);
+            background: linear-gradient(135deg, #FFB347, #FF8C42);
             border: 3px solid var(--dark-bg);
             display: flex;
             align-items: center;
@@ -171,8 +174,8 @@
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            background: rgba(102, 126, 234, 0.15);
-            border: 1px solid rgba(102, 126, 234, 0.3);
+            background: rgba(212, 148, 10, 0.15);
+            border: 1px solid rgba(212, 148, 10, 0.3);
             padding: 0.5rem 1.2rem;
             border-radius: 50px;
             font-size: 0.9rem;
@@ -184,6 +187,7 @@
             font-size: clamp(2.5rem, 6vw, 4.5rem);
             font-weight: 800;
             margin-bottom: 1rem;
+            font-family: 'Playfair Display', Georgia, serif;
             background: linear-gradient(135deg, #ffffff, var(--primary-color), var(--accent-color));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -265,7 +269,7 @@
 
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+            box-shadow: 0 8px 20px rgba(212, 148, 10, 0.4);
         }
 
         .btn-outline {
@@ -314,8 +318,8 @@
 
         .section-tag {
             display: inline-block;
-            background: rgba(102, 126, 234, 0.15);
-            border: 1px solid rgba(102, 126, 234, 0.3);
+            background: rgba(212, 148, 10, 0.15);
+            border: 1px solid rgba(212, 148, 10, 0.3);
             color: var(--primary-color);
             padding: 0.3rem 1rem;
             border-radius: 50px;
@@ -327,6 +331,7 @@
             font-size: clamp(1.8rem, 4vw, 2.5rem);
             font-weight: 700;
             margin-bottom: 1rem;
+            font-family: 'Playfair Display', Georgia, serif;
         }
 
         .section-divider {
@@ -347,7 +352,7 @@
         }
 
         .card:hover {
-            border-color: rgba(102, 126, 234, 0.4);
+            border-color: rgba(212, 148, 10, 0.4);
             transform: translateY(-4px);
             box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
         }
@@ -454,7 +459,7 @@
         }
 
         .experience-card:hover {
-            border-color: rgba(102, 126, 234, 0.4);
+            border-color: rgba(212, 148, 10, 0.4);
             transform: translateX(4px);
         }
 
@@ -530,7 +535,7 @@
         }
 
         .education-card:hover {
-            border-color: rgba(102, 126, 234, 0.4);
+            border-color: rgba(212, 148, 10, 0.4);
             transform: translateY(-4px);
             box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
         }
@@ -567,8 +572,8 @@
 
         .edu-badge {
             display: inline-block;
-            background: rgba(102, 126, 234, 0.15);
-            border: 1px solid rgba(102, 126, 234, 0.3);
+            background: rgba(212, 148, 10, 0.15);
+            border: 1px solid rgba(212, 148, 10, 0.3);
             color: var(--primary-color);
             padding: 0.25rem 0.8rem;
             border-radius: 50px;
@@ -591,7 +596,7 @@
         }
 
         .skill-card:hover {
-            border-color: rgba(102, 126, 234, 0.4);
+            border-color: rgba(212, 148, 10, 0.4);
             transform: translateY(-4px);
         }
 
@@ -655,7 +660,7 @@
         }
 
         .testimonial:hover {
-            border-color: rgba(102, 126, 234, 0.4);
+            border-color: rgba(212, 148, 10, 0.4);
             transform: translateY(-4px);
         }
 
@@ -778,7 +783,7 @@
 
         /* Footer */
         footer {
-            background: rgba(10, 14, 39, 0.8);
+            background: rgba(7, 30, 43, 0.85);
             border-top: 1px solid var(--card-border);
             padding: 2.5rem;
             text-align: center;
@@ -923,7 +928,7 @@
             <a href="#contact" class="btn btn-primary">
                 <i class="fas fa-envelope"></i> Get In Touch
             </a>
-            <a href="CV.md" class="btn btn-outline" target="_blank">
+            <a href="cv.html" class="btn btn-outline" target="_blank">
                 <i class="fas fa-file-alt"></i> View CV
             </a>
         </div>
