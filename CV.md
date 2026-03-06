@@ -6,7 +6,7 @@
 ## PERSONAL INFORMATION
 
 - **Location:** Gösper Straße 5, 28779, Bremen, Germany
-- **Phone:** (+49) 015213147816
+- **Phone:** (+49) 15755197114
 - **Email:** jivaneklo@gmail.com
 - **Portfolio:** [portfolio-beta-three-7r0gr05crm.vercel.app](https://portfolio-beta-three-7r0gr05crm.vercel.app/)
 - **Gender:** Male

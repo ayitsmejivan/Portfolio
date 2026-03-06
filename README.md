@@ -86,9 +86,8 @@ Process Improvement        │  Complaint Handling        │  Quality Assurance
 | Channel | Details |
 |---------|---------|
 | 📧 Email | [jivaneklo@gmail.com](mailto:jivaneklo@gmail.com) |
-| 📱 Phone | [(+49) 015213147816](tel:+49015213147816) |
+| 📱 Phone | [(+49) 15755197114](tel:+4915755197114) |
 | 💼 LinkedIn | [jivan-parajuli-986742144](https://www.linkedin.com/in/jivan-parajuli-986742144) |
-| 🐙 GitHub | [ayitsmejivan](https://github.com/ayitsmejivan) |
 | 📍 Location | Gösper Straße 5, 28779 Bremen, Germany |
 
 ---
