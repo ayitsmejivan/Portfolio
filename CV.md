@@ -8,7 +8,7 @@
 - **Location:** Gösper Straße 5, 28779, Bremen, Germany
 - **Phone:** (+49) 015213147816
 - **Email:** jivaneklo@gmail.com
-- **GitHub:** [github.com/ayitsmejivan](https://github.com/ayitsmejivan)
+- **Portfolio:** [portfolio-beta-three-7r0gr05crm.vercel.app](https://portfolio-beta-three-7r0gr05crm.vercel.app/)
 - **Gender:** Male
 - **Date of Birth:** 13/03/1999
 - **Nationality:** Nepalese
