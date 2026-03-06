@@ -45,7 +45,8 @@ Proven ability to lead cross-functional teams, streamline operations, and effici
 - Collaborated with hotels, room reservation services, and partners for necessary arrangements
 - Acted as bridge between guests and management to address concerns and relay feedback
 - Focused on delivering high-quality service to enhance guest satisfaction throughout tours
-- Coordinated multiple simultaneous group tours (up to 30+ participants)
+- Managed 10+ simultaneous group tours with groups of up to 30+ participants
+- Served and guided inbound tourists from Europe, America, and Asia
 - Managed guest requests and customized itineraries based on preferences
 
 ### Waiter/Barman/Cashier
@@ -173,9 +174,9 @@ Nepal Trip Planner organized everything for me, including hotels and transportat
 
 - **100+ Client Groups Managed** - Successfully coordinated and managed 100+ tour groups
 - **5-Star Review Average** - Maintained consistent 5-star ratings across all platforms
-- **Group Size Management** - Coordinated large group tours (30+ participants)
+- **Simultaneous Multi-Group Management** — Managed 10+ tour groups simultaneously with seamless logistics
 - **Special Requests Handling** - Customized itineraries based on individual client needs (photography tours, accessibility accommodations, etc.)
-- **Cross-National Operations** - Managed operations across Nepal, Mauritius, and Germany
+- **Inbound Tourism Excellence** — Managed Nepal inbound tourism operations, welcoming tourists from Europe, America, and Asia
 - **24/7 Availability** - Provided round-the-clock support to ensure guest satisfaction
 - **Quick Issue Resolution** - Resolved operational challenges promptly and professionally
 
