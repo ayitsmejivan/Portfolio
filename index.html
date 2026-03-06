@@ -12,19 +12,24 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@300;400;500;600;700&family=Caveat:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <style>
         /* CSS Variables - Tourism & Hospitality Theme */
         :root {
             --dark-bg: #071E2B;
             --primary-color: #D4940A;
-            --secondary-color: #0B7A8A;
+            --secondary-color: #086877;
             --accent-color: #FF8C42;
             --text-light: #F0EDE8;
             --text-muted: #A8B8C8;
             --card-bg: rgba(255, 255, 255, 0.05);
             --card-border: rgba(255, 255, 255, 0.1);
+            /* Neutral foundation */
+            --light-bg: #F9F5F0;
+            --card-bg-white: #FFFFFF;
+            --text-dark: #1E2B2E;
+            --text-soft: #5A6B6F;
         }
 
         * {
@@ -864,6 +869,492 @@
                 display: none;
             }
         }
+
+        /* =============================================
+           TOURISM ENHANCEMENTS
+           ============================================= */
+
+        /* Hero amber gradient overlay */
+        #hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at 50% 60%, rgba(212, 148, 10, 0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        #hero {
+            position: relative;
+        }
+
+        /* Skill icons on coral circles */
+        .skill-icon {
+            background: linear-gradient(135deg, var(--accent-color), #e8722e) !important;
+        }
+
+        /* ---- Luggage Tag Testimonials ---- */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .testimonial {
+            background: var(--light-bg);
+            border: 1px solid rgba(212, 148, 10, 0.2);
+            border-radius: 12px 12px 12px 12px;
+            padding: 2rem 2rem 1.5rem;
+            transition: all 0.3s ease;
+            position: relative;
+            color: var(--text-dark);
+            box-shadow: 0 4px 16px rgba(30, 43, 46, 0.1), 4px 4px 0 rgba(8, 104, 119, 0.15);
+        }
+
+        /* Luggage tag hole */
+        .testimonial::before {
+            content: '';
+            position: absolute;
+            top: -1px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background: var(--dark-bg);
+            border: 2px solid rgba(212, 148, 10, 0.4);
+            z-index: 1;
+        }
+
+        /* Coral string/dotted line above the tag */
+        .testimonial::after {
+            content: '';
+            position: absolute;
+            top: -24px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 20px;
+            border-left: 2px dashed var(--accent-color);
+        }
+
+        .testimonial:hover {
+            transform: translateY(-6px) rotate(-1deg);
+            box-shadow: 0 12px 30px rgba(30, 43, 46, 0.18), 4px 4px 0 rgba(8, 104, 119, 0.25);
+        }
+
+        .testimonial-stars {
+            color: var(--primary-color);
+            font-size: 0.95rem;
+            margin-bottom: 0.8rem;
+            margin-top: 0.5rem;
+        }
+
+        .testimonial-text {
+            color: var(--text-dark);
+            font-style: italic;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+            font-family: 'Caveat', cursive;
+            font-weight: 600;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            border-top: 1px dashed rgba(8, 104, 119, 0.3);
+            padding-top: 1rem;
+        }
+
+        .testimonial-author-icon {
+            background: linear-gradient(135deg, var(--secondary-color), #0a8fa0) !important;
+        }
+
+        .testimonial-author-info strong {
+            color: var(--text-dark);
+        }
+
+        .testimonial-author-info span {
+            color: var(--text-soft);
+        }
+
+        /* Luggage tag section background */
+        #testimonials {
+            background: linear-gradient(180deg, transparent 0%, rgba(249, 245, 240, 0.04) 100%);
+        }
+
+        /* ---- Sector color-coded experience cards ---- */
+        /* Luxury/Operations → Amber accent */
+        .experience-card[data-sector="luxury"] {
+            border-left: 4px solid var(--primary-color);
+        }
+
+        /* Eco/Adventure → Teal accent */
+        .experience-card[data-sector="eco"] {
+            border-left: 4px solid var(--secondary-color);
+        }
+
+        /* Cultural/Food → Coral accent */
+        .experience-card[data-sector="cultural"] {
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .sector-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            font-size: 0.75rem;
+            padding: 0.15rem 0.6rem;
+            border-radius: 50px;
+            font-weight: 600;
+            margin-left: 0.5rem;
+            vertical-align: middle;
+        }
+
+        .sector-badge.luxury {
+            background: rgba(212, 148, 10, 0.15);
+            color: var(--primary-color);
+            border: 1px solid rgba(212, 148, 10, 0.3);
+        }
+
+        .sector-badge.eco {
+            background: rgba(8, 104, 119, 0.15);
+            color: var(--secondary-color);
+            border: 1px solid rgba(8, 104, 119, 0.3);
+        }
+
+        .sector-badge.cultural {
+            background: rgba(255, 140, 66, 0.15);
+            color: var(--accent-color);
+            border: 1px solid rgba(255, 140, 66, 0.3);
+        }
+
+        /* ---- Boarding Pass Contact Card ---- */
+        .contact-cta {
+            background: var(--card-bg-white);
+            border: none;
+            border-radius: 16px;
+            padding: 0;
+            overflow: hidden;
+            color: var(--text-dark);
+            box-shadow: 0 8px 30px rgba(30, 43, 46, 0.2);
+            position: relative;
+        }
+
+        .boarding-pass-top {
+            background: linear-gradient(135deg, var(--secondary-color), #0a8fa0);
+            padding: 1.8rem 2rem 1.2rem;
+            color: white;
+        }
+
+        .boarding-pass-top .airline-name {
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            opacity: 0.85;
+            margin-bottom: 0.6rem;
+        }
+
+        .boarding-pass-route {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .bp-city {
+            text-align: center;
+        }
+
+        .bp-city-code {
+            font-size: 1.8rem;
+            font-weight: 800;
+            font-family: 'Playfair Display', Georgia, serif;
+            line-height: 1;
+        }
+
+        .bp-city-name {
+            font-size: 0.7rem;
+            opacity: 0.8;
+            letter-spacing: 0.05em;
+        }
+
+        .bp-flight-line {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .bp-flight-line::before,
+        .bp-flight-line::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.4);
+            border-top: 1px dashed rgba(255, 255, 255, 0.5);
+        }
+
+        .bp-plane-icon {
+            color: var(--primary-color);
+            font-size: 1.1rem;
+        }
+
+        .boarding-pass-tear {
+            display: flex;
+            align-items: center;
+            margin: 0;
+        }
+
+        .boarding-pass-tear::before {
+            content: '';
+            height: 20px;
+            width: 14px;
+            border-radius: 0 10px 10px 0;
+            background: var(--dark-bg);
+            flex-shrink: 0;
+        }
+
+        .boarding-pass-tear::after {
+            content: '';
+            height: 20px;
+            width: 14px;
+            border-radius: 10px 0 0 10px;
+            background: var(--dark-bg);
+            flex-shrink: 0;
+            margin-left: auto;
+        }
+
+        .boarding-pass-perforation {
+            flex: 1;
+            border-top: 2px dashed rgba(8, 104, 119, 0.3);
+        }
+
+        .boarding-pass-body {
+            padding: 1.5rem 2rem 2rem;
+        }
+
+        .bp-details-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .bp-detail {
+            display: flex;
+            flex-direction: column;
+            gap: 0.1rem;
+        }
+
+        .bp-detail-label {
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--text-soft);
+        }
+
+        .bp-detail-value {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .boarding-pass-body .contact-cta-buttons {
+            margin-top: 1.5rem;
+        }
+
+        .btn-book-now {
+            background: linear-gradient(135deg, var(--primary-color), #e8a020);
+            color: white;
+            font-size: 1rem;
+            padding: 0.9rem 2rem;
+            border-radius: 8px;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .btn-book-now:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(212, 148, 10, 0.4);
+        }
+
+        .contact-cta h3 {
+            font-size: 1.2rem;
+            color: var(--text-dark);
+            margin-bottom: 0.4rem;
+        }
+
+        .contact-cta p {
+            color: var(--text-soft);
+            margin-bottom: 0;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* ---- About section "island" backgrounds ---- */
+        .about-island {
+            border-radius: 16px;
+            padding: 1.8rem;
+        }
+
+        .about-island-amber {
+            background: rgba(212, 148, 10, 0.06);
+            border: 1px solid rgba(212, 148, 10, 0.15);
+        }
+
+        .about-island-teal {
+            background: rgba(8, 104, 119, 0.06);
+            border: 1px solid rgba(8, 104, 119, 0.15);
+        }
+
+        .about-island-coral {
+            background: rgba(255, 140, 66, 0.06);
+            border: 1px solid rgba(255, 140, 66, 0.15);
+        }
+
+        .about-island h4 {
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.8rem;
+        }
+
+        .about-island-amber h4 { color: var(--primary-color); }
+        .about-island-teal h4  { color: var(--secondary-color); }
+        .about-island-coral h4 { color: var(--accent-color); }
+
+        /* ---- Wave divider between sections ---- */
+        .wave-divider {
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+            margin: -1px 0;
+        }
+
+        .wave-divider svg {
+            display: block;
+            width: 100%;
+        }
+
+        /* ---- Destinations stats (enhanced) ---- */
+        .destinations-stats {
+            display: flex;
+            gap: 2.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+
+        .dest-stat {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .dest-stat-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .dest-stat-icon.amber  { background: rgba(212, 148, 10, 0.15); color: var(--primary-color); }
+        .dest-stat-icon.teal   { background: rgba(8, 104, 119, 0.15);  color: var(--secondary-color); }
+        .dest-stat-icon.coral  { background: rgba(255, 140, 66, 0.15); color: var(--accent-color); }
+        .dest-stat-icon.green  { background: rgba(72, 159, 72, 0.15);  color: #489f48; }
+
+        .dest-stat-number {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-light);
+        }
+
+        .dest-stat-label {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            text-align: center;
+        }
+
+        /* About islands text */
+        .about-island p {
+            color: var(--text-muted);
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        /* About islands container flex layout */
+        .about-islands-column {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+
+        /* Experience sector legend */
+        .experience-sector-legend {
+            display: flex;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+            margin-bottom: 0.5rem;
+            align-items: center;
+        }
+
+        .experience-sector-legend-label {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        /* Boarding pass detail block with top spacing */
+        .bp-details-first-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-bottom: 1.2rem;
+            margin-top: 1.2rem;
+        }
+
+        /* Water ripple on primary buttons */
+        .btn-primary {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at center, rgba(255, 255, 255, 0.25) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .btn-primary:hover::after {
+            opacity: 1;
+        }
+
+        .btn-outline-centered {
+            justify-content: center;
+            margin-top: 0.6rem;
+        }
     </style>
 </head>
 <body>
@@ -924,6 +1415,28 @@
                 <div class="stat-label">Countries</div>
             </div>
         </div>
+        <div class="destinations-stats">
+            <div class="dest-stat">
+                <div class="dest-stat-icon amber"><i class="fas fa-globe-asia"></i></div>
+                <div class="dest-stat-number">3</div>
+                <div class="dest-stat-label">Continents Explored</div>
+            </div>
+            <div class="dest-stat">
+                <div class="dest-stat-icon teal"><i class="fas fa-hotel"></i></div>
+                <div class="dest-stat-number">50+</div>
+                <div class="dest-stat-label">Hotels Partnered</div>
+            </div>
+            <div class="dest-stat">
+                <div class="dest-stat-icon coral"><i class="fas fa-route"></i></div>
+                <div class="dest-stat-number">200+</div>
+                <div class="dest-stat-label">Tours Designed</div>
+            </div>
+            <div class="dest-stat">
+                <div class="dest-stat-icon green"><i class="fas fa-language"></i></div>
+                <div class="dest-stat-number">3</div>
+                <div class="dest-stat-label">Languages Spoken</div>
+            </div>
+        </div>
         <div class="hero-buttons">
             <a href="#contact" class="btn btn-primary">
                 <i class="fas fa-envelope"></i> Get In Touch
@@ -955,22 +1468,32 @@
             <h2 class="section-title">Professional Summary</h2>
             <div class="section-divider"></div>
         </div>
+        <!-- Island Resort: three-island about layout -->
         <div class="about-grid">
-            <div class="about-text">
-                <p>
-                    A dedicated and adaptable tourism professional with over four years of experience in tour operations,
-                    hospitality management, and customer service excellence. Skilled in designing and managing travel
-                    itineraries, coordinating logistics, and ensuring exceptional guest experiences.
-                </p>
-                <p>
-                    Proven ability to lead cross-functional teams, streamline operations, and efficiently handle
-                    high-pressure situations. Passionate about crafting seamless and memorable travel experiences
-                    from planning to execution.
-                </p>
-                <p>
-                    Currently pursuing an MBA in International Tourism Management at Hochschule Bremen while
-                    seeking operational excellence in dynamic team environments.
-                </p>
+            <div class="about-text about-islands-column">
+                <div class="about-island about-island-amber">
+                    <h4><i class="fas fa-sun"></i> My Story</h4>
+                    <p>
+                        A dedicated and adaptable tourism professional with over four years of experience in tour operations,
+                        hospitality management, and customer service excellence. Skilled in designing and managing travel
+                        itineraries, coordinating logistics, and ensuring exceptional guest experiences.
+                    </p>
+                </div>
+                <div class="about-island about-island-teal">
+                    <h4><i class="fas fa-compass"></i> My Philosophy</h4>
+                    <p>
+                        Proven ability to lead cross-functional teams, streamline operations, and efficiently handle
+                        high-pressure situations. Passionate about crafting seamless and memorable travel experiences
+                        from planning to execution.
+                    </p>
+                </div>
+                <div class="about-island about-island-coral">
+                    <h4><i class="fas fa-rocket"></i> What I Offer</h4>
+                    <p>
+                        Currently pursuing an MBA in International Tourism Management at Hochschule Bremen — bringing
+                        academic rigor and real-world operational excellence to dynamic team environments.
+                    </p>
+                </div>
             </div>
             <div class="about-highlights">
                 <div class="highlight-item">
@@ -1020,15 +1543,22 @@
             <div class="section-divider"></div>
         </div>
         <div class="experience-timeline">
+            <!-- Sector legend -->
+            <div class="experience-sector-legend">
+                <span class="experience-sector-legend-label">Experience by sector:</span>
+                <span class="sector-badge luxury"><i class="fas fa-gem"></i> Luxury Travel</span>
+                <span class="sector-badge eco"><i class="fas fa-mountain"></i> Adventure</span>
+                <span class="sector-badge cultural"><i class="fas fa-utensils"></i> Food &amp; Culture</span>
+            </div>
             <!-- Operations Manager -->
             <div class="experience-item">
                 <div class="timeline-marker">
                     <div class="timeline-dot"></div>
                     <div class="timeline-line"></div>
                 </div>
-                <div class="experience-card">
+                <div class="experience-card" data-sector="luxury">
                     <div class="exp-header">
-                        <div class="exp-title">Operations Manager</div>
+                        <div class="exp-title">Operations Manager <span class="sector-badge luxury"><i class="fas fa-gem"></i> Luxury</span></div>
                         <div class="exp-date">Jun 2024 – Nov 2024</div>
                     </div>
                     <div class="exp-company"><i class="fas fa-building"></i> Holidays to Nepal Pvt Ltd — Kathmandu, Nepal</div>
@@ -1048,9 +1578,9 @@
                     <div class="timeline-dot"></div>
                     <div class="timeline-line"></div>
                 </div>
-                <div class="experience-card">
+                <div class="experience-card" data-sector="eco">
                     <div class="exp-header">
-                        <div class="exp-title">Tour Officer</div>
+                        <div class="exp-title">Tour Officer <span class="sector-badge eco"><i class="fas fa-mountain"></i> Adventure</span></div>
                         <div class="exp-date">Feb 2023 – May 2024</div>
                     </div>
                     <div class="exp-company"><i class="fas fa-building"></i> Nepal Trip Planners — Kathmandu, Nepal</div>
@@ -1070,9 +1600,9 @@
                     <div class="timeline-dot"></div>
                     <div class="timeline-line"></div>
                 </div>
-                <div class="experience-card">
+                <div class="experience-card" data-sector="cultural">
                     <div class="exp-header">
-                        <div class="exp-title">Waiter / Barman / Cashier</div>
+                        <div class="exp-title">Waiter / Barman / Cashier <span class="sector-badge cultural"><i class="fas fa-utensils"></i> Food &amp; Culture</span></div>
                         <div class="exp-date">Dec 2019 – Aug 2022</div>
                     </div>
                     <div class="exp-company"><i class="fas fa-building"></i> Nando's Mauritius — Quatre Bornes, Mauritius</div>
@@ -1313,18 +1843,62 @@
                 </div>
             </div>
             <div class="contact-cta">
-                <h3>Open to Opportunities</h3>
-                <p>
-                    Currently seeking internship and professional opportunities in operations, hospitality,
-                    or tourism management. Let's connect and explore how I can contribute to your team!
-                </p>
-                <div class="contact-cta-buttons">
-                    <a href="mailto:jivaneklo@gmail.com" class="btn btn-primary">
-                        <i class="fas fa-envelope"></i> Send Email
-                    </a>
-                    <a href="https://www.linkedin.com/in/jivan-parajuli-986742144" class="btn btn-outline" target="_blank">
-                        <i class="fab fa-linkedin-in"></i> Connect on LinkedIn
-                    </a>
+                <!-- Boarding Pass Header -->
+                <div class="boarding-pass-top">
+                    <div class="airline-name">✈ Jivan Parajuli · Tourism Professional</div>
+                    <div class="boarding-pass-route">
+                        <div class="bp-city">
+                            <div class="bp-city-code">BRE</div>
+                            <div class="bp-city-name">Bremen, Germany</div>
+                        </div>
+                        <div class="bp-flight-line">
+                            <span class="bp-plane-icon"><i class="fas fa-plane"></i></span>
+                        </div>
+                        <div class="bp-city">
+                            <div class="bp-city-code">YOU</div>
+                            <div class="bp-city-name">Let's Work Together</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Perforation tear line -->
+                <div class="boarding-pass-tear">
+                    <div class="boarding-pass-perforation"></div>
+                </div>
+                <!-- Boarding Pass Body -->
+                <div class="boarding-pass-body">
+                    <h3>Open to Opportunities</h3>
+                    <p>
+                        Currently seeking internship and professional opportunities in operations, hospitality,
+                        or tourism management. Let's connect and explore how I can contribute to your team!
+                    </p>
+                    <div class="bp-details-first-row">
+                        <div class="bp-detail">
+                            <span class="bp-detail-label">Gate (Email)</span>
+                            <span class="bp-detail-value">jivaneklo@gmail.com</span>
+                        </div>
+                        <div class="bp-detail">
+                            <span class="bp-detail-label">Seat (LinkedIn)</span>
+                            <span class="bp-detail-value">jivan-parajuli</span>
+                        </div>
+                    </div>
+                    <div class="bp-details-row">
+                        <div class="bp-detail">
+                            <span class="bp-detail-label">Boarding Time</span>
+                            <span class="bp-detail-value">Immediately Available</span>
+                        </div>
+                        <div class="bp-detail">
+                            <span class="bp-detail-label">Class</span>
+                            <span class="bp-detail-value">MBA · Tourism Mgmt</span>
+                        </div>
+                    </div>
+                    <div class="contact-cta-buttons">
+                        <a href="mailto:jivaneklo@gmail.com" class="btn-book-now">
+                            <i class="fas fa-ticket-alt"></i> Book Now — Send Email
+                        </a>
+                        <a href="https://www.linkedin.com/in/jivan-parajuli-986742144" class="btn btn-outline btn-outline-centered" target="_blank">
+                            <i class="fab fa-linkedin-in"></i> Connect on LinkedIn
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
