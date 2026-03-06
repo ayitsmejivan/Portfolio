@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jivan Parajuli | Tourism & Operations Professional</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: #667eea;
+        }
+
+        /* Hero Section */
+        .hero {
+            max-width: 1200px;
+            margin: 3rem auto 0;
+            padding: 4rem 2rem;
+            background: white;
+            border-radius: 10px 10px 0 0;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: #666;
+            margin-bottom: 2rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #667eea;
+            border: 2px solid #667eea;
+        }
+
+        .btn-secondary:hover {
+            background: #667eea;
+            color: white;
+        }
+
+        /* Sections */
+        section {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 3rem 2rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: #667eea;
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 2px;
+        }
+
+        /* Experience */
+        .experience-item {
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .experience-item:last-child {
+            border-bottom: none;
+        }
+
+        .job-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+
+        .company-info {
+            font-size: 1rem;
+            color: #764ba2;
+            margin-bottom: 0.5rem;
+        }
+
+        .date {
+            color: #999;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .experience-item ul {
+            margin-left: 2rem;
+            color: #555;
+        }
+
+        .experience-item li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Education */
+        .education-item {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: #f8f9ff;
+            border-left: 4px solid #667eea;
+            border-radius: 5px;
+        }
+
+        .degree {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Testimonials */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial {
+            padding: 1.5rem;
+            background: linear-gradient(135deg, #f5f7ff 0%, #f0e9ff 100%);
+            border-left: 4px solid #667eea;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(102, 126, 234, 0.1);
+        }
+
+        .testimonial-quote {
+            font-style: italic;
+            color: #555;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .testimonial-author {
+            font-weight: bold;
+            color: #667eea;
+            font-size: 0.9rem;
+        }
+
+        .testimonial-date {
+            color: #999;
+            font-size: 0.85rem;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .skill-category {
+            padding: 1.5rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .skill-category h3 {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .skill-category p {
+            line-height: 1.8;
+        }
+
+        /* Contact Section */
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .contact-item {
+            padding: 1.5rem;
+            background: #f8f9ff;
+            border-radius: 5px;
+        }
+
+        .contact-item h3 {
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-item p {
+            color: #666;
+        }
+
+        .contact-item a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            section {
+                margin: 1rem auto;
+                padding: 1.5rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .stat-box {
+            padding: 1.5rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 5px;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .stat-label {
+            color: rgba(255, 255, 255, 0.9);
+            margin-top: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">JP</div>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#testimonials">Reviews</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Jivan Parajuli</h1>
+        <p>Tourism & Operations Professional</p>
+        <p style="font-size: 1rem; color: #999;">4+ Years of Excellence in Tour Management & Hospitality</p>
+        <div class="cta-buttons">
+            <a href="#contact" class="btn btn-primary">Get In Touch</a>
+            <a href="#experience" class="btn btn-secondary">View Experience</a>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section style="padding: 2rem;">
+        <div class="stats">
+            <div class="stat-box">
+                <div class="stat-number">4+</div>
+                <div class="stat-label">Years Experience</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">100+</div>
+                <div class="stat-label">Groups Managed</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">5★</div>
+                <div class="stat-label">Consistent Reviews</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">3</div>
+                <div class="stat-label">Countries</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Me</h2>
+        <p style="font-size: 1.1rem; line-height: 1.8; text-align: center; color: #666;">
+            I am a dedicated and adaptable tourism professional with over four years of experience in tour operations, 
+            hospitality management, and customer service excellence. Skilled in designing and managing travel itineraries, 
+            coordinating logistics, and ensuring exceptional guest experiences.
+        </p>
+        <p style="font-size: 1.1rem; line-height: 1.8; text-align: center; color: #666; margin-top: 1rem;">
+            With a proven ability to lead cross-functional teams, streamline operations, and efficiently handle high-pressure 
+            situations, I am passionate about crafting seamless and memorable travel experiences from planning to execution.
+        </p>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <h2>Professional Experience</h2>
+
+        <div class="experience-item">
+            <div class="job-title">Operations Manager</div>
+            <div class="company-info">Holidays to Nepal Pvt Ltd | Kathmandu, Nepal</div>
+            <div class="date">June 2024 – November 2024</div>
+            <ul>
+                <li>Managed and supervised all aspects of tour operations to ensure seamless execution</li>
+                <li>Coordinated with clients, travel partners, and vendors to enhance service quality</li>
+                <li>Optimized tour packages to cater to customer needs and market trends</li>
+                <li>Handled bookings, logistics, and travel arrangements efficiently</li>
+                <li>Led the operations team to maintain high standards of customer service and satisfaction</li>
+            </ul>
+        </div>
+
+        <div class="experience-item">
+            <div class="job-title">Tour Officer</div>
+            <div class="company-info">Nepal Trip Planners | Kathmandu, Nepal</div>
+            <div class="date">February 2023 – May 2024</div>
+            <ul>
+                <li>Managed logistics and coordination for guest arrival and departure</li>
+                <li>Handled planning and execution of tour activities ensuring smooth operations</li>
+                <li>Collaborated with hotels, room reservation services, and partners</li>
+                <li>Acted as bridge between guests and management to address concerns</li>
+                <li>Focused on delivering high-quality service to enhance guest satisfaction</li>
+            </ul>
+        </div>
+
+        <div class="experience-item">
+            <div class="job-title">Waiter/Barman/Cashier</div>
+            <div class="company-info">Nando's Mauritius | Quatre Bornes, Mauritius</div>
+            <div class="date">December 2019 – August 2022</div>
+            <ul>
+                <li>Provided excellent customer service and maintained high satisfaction levels</li>
+                <li>Handled cash transactions efficiently with accuracy</li>
+                <li>Prepared and served drinks professionally</li>
+                <li>Assisted in restaurant operations during peak hours</li>
+                <li>Demonstrated strong teamwork and dedication to company standards</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+        <h2>Education & Training</h2>
+
+        <div class="education-item">
+            <div class="degree">MBA in International Tourism Management</div>
+            <div class="company-info">Hochschule Bremen | Bremen, Germany</div>
+            <div class="date">November 2024 – Present</div>
+            <p>Level: EQF Level 7</p>
+        </div>
+
+        <div class="education-item">
+            <div class="degree">Bachelor of Arts in Tourism and Hospitality Management</div>
+            <div class="company-info">Amity Institute of Higher Education | Quatre Bornes, Mauritius</div>
+            <div class="date">April 2019 – December 2022</div>
+            <p>Level: EQF Level 6</p>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials">
+        <h2>Client Testimonials & Reviews</h2>
+        <div class="testimonials-grid">
+            <div class="testimonial">
+                <div class="testimonial-quote">
+                    "Awesome planning done by Jivan and Suvesh. All arrangements, transport, hotel stays were well managed and locations were within the city area so we could also plan our shopping. On our request, they arranged for a wheelchair which was really useful for my aunt as she could not walk. Very cooperative and supportive."
+                </div>
+                <div class="testimonial-author">Family Trip</div>
+                <div class="testimonial-date">November 2023 ⭐⭐⭐⭐⭐</div>
+            </div>
+
+            <div class="testimonial">
+                <div class="testimonial-quote">
+                    "Our Nepal trip was absolutely fantastic! Suvesh and Jivan took care of every detail seamlessly from booking to our final farewell. The hotel provided was excellent and everything was conveniently located. Their gesture of providing a Bouda trip as a gift was incredibly sweet."
+                </div>
+                <div class="testimonial-author">Family Trip</div>
+                <div class="testimonial-date">April 2024 ⭐⭐⭐⭐⭐</div>
+            </div>
+
+            <div class="testimonial">
+                <div class="testimonial-quote">
+                    "We went as a group of 30 family members and the organization of the trip was excellent. I have to mention especially Suvesh, Jeevan, and Kharkee who took utmost care of all our needs and explained the significance of all the places."
+                </div>
+                <div class="testimonial-author">Group of 30 Family Members</div>
+                <div class="testimonial-date">September 2023 ⭐⭐⭐⭐⭐</div>
+            </div>
+
+            <div class="testimonial">
+                <div class="testimonial-quote">
+                    "Absolutely amazing trip organized by such a professional and personal company. They tailored the whole itinerary around my photography interests. The constant communication was fantastic. Our driver Laxmann was the best I have experienced."
+                </div>
+                <div class="testimonial-author">Family Trip</div>
+                <div class="testimonial-date">December 2023 ⭐⭐⭐⭐⭐</div>
+            </div>
+
+            <div class="testimonial">
+                <div class="testimonial-quote">
+                    "Suvesh and Jivan were wonderful in helping me plan my trip around Kathmandu, Pokhara and Chitwan. I was able to see many new and interesting sights explained by professional guides. Nepal Trip Planner organized everything including hotels and transportation."
+                </div>
+                <div class="testimonial-author">Solo Traveler</div>
+                <div class="testimonial-date">September 2023 ⭐⭐⭐⭐⭐</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2>Core Competencies</h2>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h3>Operations & Management</h3>
+                <p>Tour Coordination<br>Logistics Optimization<br>Team Leadership<br>Process Improvement</p>
+            </div>
+            <div class="skill-category">
+                <h3>Customer Service</h3>
+                <p>Client Relations<br>Problem Resolution<br>Feedback Management<br>Guest Satisfaction</p>
+            </div>
+            <div class="skill-category">
+                <h3>Travel & Hospitality</h3>
+                <p>Itinerary Planning<br>Booking Management<br>Vendor Coordination<br>Quality Assurance</p>
+            </div>
+            <div class="skill-category">
+                <h3>Professional Skills</h3>
+                <p>Cross-functional Collaboration<br>Communication<br>Problem Solving<br>Adaptability</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Get In Touch</h2>
+        <div class="contact-info">
+            <div class="contact-item">
+                <h3>📧 Email</h3>
+                <p><a href="mailto:jivaneklo@gmail.com">jivaneklo@gmail.com</a></p>
+            </div>
+            <div class="contact-item">
+                <h3>📱 Phone</h3>
+                <p><a href="tel:+49015213147816">(+49) 015213147816</a></p>
+            </div>
+            <div class="contact-item">
+                <h3>📍 Location</h3>
+                <p>Gösper Straße 5<br>28779, Bremen<br>Germany</p>
+            </div>
+            <div class="contact-item">
+                <h3>🔗 GitHub</h3>
+                <p><a href="https://github.com/ayitsmejivan" target="_blank">github.com/ayitsmejivan</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Jivan Parajuli. All rights reserved.</p>
+        <p>Tourism Professional | Operations Manager | Hospitality Expert</p>
+    </footer>
+</body>
+</html>
