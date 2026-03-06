@@ -19,10 +19,10 @@
         :root {
             --dark-bg: #060F1A;
             --primary-color: #C9930A;
-            --secondary-color: #076070;
-            --accent-color: #E8793A;
+            --secondary-color: #1A4A8A;
+            --accent-color: #B87333;
             --gold-light: #F0C060;
-            --teal-light: #4ECDC4;
+            --blue-light: #5B8FD4;
             --text-light: #F5F0E8;
             --text-muted: #9AAEBB;
             --card-bg: rgba(255, 255, 255, 0.045);
@@ -48,7 +48,7 @@
         body {
             background: #060F1A;
             background-image:
-                radial-gradient(ellipse at 20% 20%, rgba(8, 80, 90, 0.35) 0%, transparent 55%),
+                radial-gradient(ellipse at 20% 20%, rgba(26, 74, 138, 0.35) 0%, transparent 55%),
                 radial-gradient(ellipse at 80% 80%, rgba(100, 50, 5, 0.25) 0%, transparent 50%),
                 radial-gradient(ellipse at 50% 50%, rgba(6, 40, 60, 0.4) 0%, transparent 70%);
             background-attachment: fixed;
@@ -547,7 +547,7 @@
         }
 
         .exp-company {
-            color: var(--teal-light);
+            color: var(--blue-light);
             font-size: 0.9rem;
             margin-bottom: 1rem;
             font-weight: 500;
@@ -635,7 +635,7 @@
         }
 
         .edu-institution {
-            color: var(--teal-light);
+            color: var(--blue-light);
             font-size: 0.9rem;
             margin-bottom: 0.3rem;
         }
@@ -977,7 +977,7 @@
             inset: 0;
             background:
                 radial-gradient(ellipse at 50% 80%, rgba(201, 147, 10, 0.06) 0%, transparent 60%),
-                radial-gradient(ellipse at 20% 20%, rgba(7, 96, 112, 0.08) 0%, transparent 50%);
+                radial-gradient(ellipse at 20% 20%, rgba(26, 74, 138, 0.08) 0%, transparent 50%);
             pointer-events: none;
         }
 
@@ -985,9 +985,9 @@
             position: relative;
         }
 
-        /* Skill icons on coral circles */
+        /* Skill icons on bronze circles */
         .skill-icon {
-            background: linear-gradient(135deg, var(--accent-color), #c05520) !important;
+            background: linear-gradient(135deg, var(--accent-color), #8B5A1A) !important;
         }
 
         /* ---- Testimonials update ---- */
@@ -1001,7 +1001,7 @@
         }
 
         .testimonial-author-icon {
-            background: linear-gradient(135deg, var(--secondary-color), #0a8fa0) !important;
+            background: linear-gradient(135deg, var(--secondary-color), #2A6AC0) !important;
         }
 
         /* ---- Experience cards sector borders ---- */
@@ -1010,7 +1010,7 @@
         }
 
         .experience-card[data-sector="eco"] {
-            border-left: 4px solid var(--teal-light);
+            border-left: 4px solid var(--blue-light);
         }
 
         .experience-card[data-sector="cultural"] {
@@ -1152,7 +1152,7 @@
         }
 
         .about-panel-teal {
-            border-left: 3px solid var(--teal-light);
+            border-left: 3px solid var(--blue-light);
         }
 
         .about-panel-coral {
@@ -1171,7 +1171,7 @@
         }
 
         .about-panel-accent h4 { color: var(--gold-light); }
-        .about-panel-teal h4  { color: var(--teal-light); }
+        .about-panel-teal h4  { color: var(--blue-light); }
         .about-panel-coral h4 { color: var(--accent-color); }
 
         /* About panels text */
